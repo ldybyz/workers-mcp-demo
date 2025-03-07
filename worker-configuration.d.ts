@@ -2,6 +2,7 @@
 
 interface Env {
 	SHARED_SECRET: string;
+	BUCKET_CDN: string;
 	R2_BUCKET: R2Bucket;
 	BROWSER: Fetcher;
 	AI: Ai;

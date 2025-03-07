@@ -22,7 +22,7 @@ export default class MyWorker extends WorkerEntrypoint<Env> {
 		const img = Uint8Array.from(binaryString, (m) => m.codePointAt(0)!);
 		const key = `${crypto.randomUUID()}.png`;
 		await this.env.R2_BUCKET.put(key, new Blob([img], { type: "image/png" }));
-		return `https://mcp-demo.pexni.com/${key}`;
+		return `${this.env.BUCKET_CDN}/${key}`;
 	}
 
 	/**
@@ -45,7 +45,7 @@ export default class MyWorker extends WorkerEntrypoint<Env> {
 			key,
 			new Blob([screenshot], { type: "image/png" }),
 		);
-		return `https://mcp-demo.pexni.com/${key}`;
+		return `${this.env.BUCKET_CDN}/${key}`;
 	}
 
 	/**

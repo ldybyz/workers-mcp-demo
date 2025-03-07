@@ -1,0 +1,2 @@
+SHARED_SECRET=your_custom_secret
+BUCKET_CDN=https://your_custom_cdn
